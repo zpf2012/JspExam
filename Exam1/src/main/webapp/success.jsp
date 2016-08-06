@@ -9,7 +9,7 @@
 <body>
 	<center>
 		<h3>登陆成功</h3>
-		<a href="<%=request.getContextPath() %>/film.jsp">开始电影租赁</a>
+		<a href="<%=request.getContextPath() %>/film.jsp">电影管理</a>
 	</center>
 </body>
 </html>

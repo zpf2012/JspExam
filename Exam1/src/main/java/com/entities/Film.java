@@ -4,6 +4,7 @@ public class Film {
 	private int film_id;
 	private String title;
 	private String desc;
+	private long language;
 
 	public int getFilm_id() {
 		return film_id;
@@ -29,13 +30,13 @@ public class Film {
 		this.desc = desc;
 	}
 
-	public String getLanguage() {
+	public long getLanguage() {
 		return language;
 	}
 
-	public void setLanguage(String language) {
+	public void setLanguage(long language) {
 		this.language = language;
 	}
 
-	private String language;
+	
 }

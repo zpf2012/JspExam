@@ -51,7 +51,6 @@ public class LoginServlet extends HttpServlet {
 			rd.forward(request, response);
 		}else{
 			forword="/error.jsp";
-//			request.setAttribute("msg", "用户未注册");
 			rd = request.getRequestDispatcher(forword);
 			rd.forward(request, response);
 		}
