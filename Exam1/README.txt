@@ -1,5 +1,5 @@
-#本地数据库连接地址
-
+#配置文件路径 
+src/main/java/
 #运行jetty服务器
 mvn jetty:run
 #打开浏览器输入链接

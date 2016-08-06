@@ -19,7 +19,7 @@
 		<br> 电影描述：<input type="text" name="desc" /><br>
 		<br> 选择语种：<select>
 		<%for(int i = 0; i < language.length; i++){ %>
-			<option value="<%=language[i] %>"></option>
+			<option value="<%=language[i]%>"></option>
 			<%} %>
 		</select>
 		<input type="submit" value="提交"/>
