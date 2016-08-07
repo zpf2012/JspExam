@@ -9,16 +9,11 @@ import com.util.ConnectionFactory;
 
 
 public class GetLanguage {
-	public String [] getlanguage() throws SQLException{
-		String language [] = null;
+	public ResultSet getlanguage() throws SQLException{
 		Connection conn = ConnectionFactory.getInstance().makeConn();
 		LanguageImpl li = new LanguageImpl();
 		ResultSet rs = li.select(conn);
-		for(int i = 0; rs.next(); i++){
-			language[i] = rs.getString("name");
-			System.out.println(language[i]);
-		}
 		
-		return language;
+		return rs;
 	}
 }

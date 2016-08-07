@@ -39,24 +39,24 @@ public class FilmServlet extends HttpServlet {
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		RequestDispatcher rd = null;
 		String forword = null;
-		FilmInfo fi = new FilmInfo();
-		Object [][] obj = null;
-		try {
-			ResultSet rs = fi.getInfo();			
-			for(int i = 0; rs.next(); i++){				
-				obj[i][0] = rs.getInt("film_id");
-				obj[i][1] = rs.getString("title");
-				obj[i][0] = rs.getString("description");
-				obj[i][1] = rs.getString("name");
-			
-			}
-			request.setAttribute("film", obj);
+//		FilmInfo fi = new FilmInfo();
+//		Object [][] obj = null;
+//		try {
+//			ResultSet rs = fi.getInfo();			
+//			for(int i = 0; rs.next(); i++){				
+//				obj[i][0] = rs.getInt("film_id");
+//				obj[i][1] = rs.getString("title");
+//				obj[i][0] = rs.getString("description");
+//				obj[i][1] = rs.getString("name");
+//			
+//			}
+//			request.setAttribute("film", obj);
 			forword = "/film.jsp";
 			rd = request.getRequestDispatcher(forword);
 			rd.forward(request, response);
-		} catch (SQLException e) {
-			e.printStackTrace();
-		}
+//		} catch (SQLException e) {
+//			e.printStackTrace();
+//		}
 		
 	}
 
