@@ -13,7 +13,6 @@ public class LanguageImpl implements LanguageDao{
 		String sql = "select name from language";
 		PreparedStatement ps = conn.prepareStatement(sql);
 		ResultSet rs = ps.executeQuery();
-		System.out.println("查询成功");
 		return rs;
 	}
 

@@ -8,6 +8,6 @@
 	<h2>欢迎进入电影租赁管理系统</h2>
 	<a href="<%=request.getContextPath()%>/login.jsp">用户登录</a><br/><br/>
 	<a href="<%=request.getContextPath()%>/FilmServlet">电影查看</a><br/><br/>
-	<a href="<%=request.getContextPath()%>/NewFilmServlet">新增电影</a><br/><br/>
+	<a href="<%=request.getContextPath()%>/newfilm.html">新增电影</a><br/><br/>
 </center>
 </html>

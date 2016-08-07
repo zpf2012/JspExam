@@ -9,6 +9,7 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 import com.entities.Customer;
+import com.fm.CreateHtml;
 import com.service.CheckLogin;
 
 /**
@@ -36,6 +37,7 @@ public class LoginServlet extends HttpServlet {
 	 * @see HttpServlet#doPost(HttpServletRequest request, HttpServletResponse response)
 	 */
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+		
 		response.setCharacterEncoding(request.getCharacterEncoding());
 		String user = request.getParameter("customer");
 		Customer customer = new Customer();

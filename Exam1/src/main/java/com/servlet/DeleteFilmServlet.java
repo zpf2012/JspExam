@@ -40,6 +40,7 @@ public class DeleteFilmServlet extends HttpServlet {
 		RequestDispatcher rd = null;
 		String forword = null;
 		String id = request.getParameter("id");
+		System.out.println(id);
 		Film film = new Film();
 		film.setFilm_id(Integer.parseInt(id));
 		DeleteFilm df = new DeleteFilm();

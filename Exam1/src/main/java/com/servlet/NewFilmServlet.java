@@ -15,13 +15,13 @@ import com.service.NewFilm;
 /**
  * Servlet implementation class NerFilmServlet
  */
-public class NerFilmServlet extends HttpServlet {
+public class NewFilmServlet extends HttpServlet {
 	private static final long serialVersionUID = 1L;
        
     /**
      * @see HttpServlet#HttpServlet()
      */
-    public NerFilmServlet() {
+    public NewFilmServlet() {
         super();
         // TODO Auto-generated constructor stub
     }
@@ -40,18 +40,17 @@ public class NerFilmServlet extends HttpServlet {
 		RequestDispatcher rd = null;
 		String forword = null;
 		Film film = new Film();
-		film.setFilm_id(Integer.parseInt(request.getParameter("film_id")));
+//		film.setFilm_id(Integer.parseInt(request.getParameter("film_id")));
 		film.setTitle(request.getParameter("title"));
 		film.setDesc(request.getParameter("desc"));
-		film.setLanguage(Integer.parseInt(request.getParameter("language")));
+		film.setLanguage_name(request.getParameter("language"));
 		
 		NewFilm nf = new NewFilm();
 		nf.addfilm(film);
 		
 		forword = "/film.jsp";
 		rd = request.getRequestDispatcher(forword);
-		rd.forward(request, response);
-		
+		rd.forward(request, response);		
 	}
 
 }

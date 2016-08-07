@@ -1,3 +1,4 @@
+<%@page import="com.fm.CreateHtml"%>
 <%@page import="com.service.FilmInfo"%>
 <%@page import="java.util.Iterator"%>
 <%@page import="com.service.GetLanguage"%>
@@ -17,7 +18,7 @@
 <body>
 	<center>
 	<h3>电影管理</h3><br>
-	<a href="<%=request.getContextPath()%>/NewFilmServlet">新增电影</a>
+	<a href="<%=request.getContextPath()%>/newfilm.html">新增电影</a>
 		<form method="post">
 			<table border="1">
 				<tr>

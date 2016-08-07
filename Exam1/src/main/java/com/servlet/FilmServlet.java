@@ -9,6 +9,8 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 
+import com.fm.CreateHtml;
+
 /**
  * Servlet implementation class FilmServlet
  */
@@ -34,6 +36,7 @@ public class FilmServlet extends HttpServlet {
 	 * @see HttpServlet#doPost(HttpServletRequest request, HttpServletResponse response)
 	 */
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+
 		RequestDispatcher rd = null;
 		String forword = null;
 		HttpSession session = request.getSession();

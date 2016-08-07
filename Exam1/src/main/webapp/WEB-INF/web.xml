@@ -22,13 +22,6 @@
   </servlet>
 
   <servlet>
-  	<servlet-name>NerFilmServlet</servlet-name>
-  	<display-name>NerFilmServlet</display-name>
-  	<description></description>
-  	<servlet-class>com.servlet.NerFilmServlet</servlet-class>
-  </servlet>
-
-  <servlet>
   	<servlet-name>DeleteFilmServlet</servlet-name>
   	<display-name>DeleteFilmServlet</display-name>
   	<description></description>
@@ -40,14 +33,15 @@
   	<description></description>
   	<servlet-class>com.servlet.FilmServlet</servlet-class>
   </servlet>
+  <servlet>
+  	<servlet-name>NewFilmServlet</servlet-name>
+  	<display-name>NewFilmServlet</display-name>
+  	<description></description>
+  	<servlet-class>com.servlet.NewFilmServlet</servlet-class>
+  </servlet>
   <servlet-mapping>
   	<servlet-name>LoginServlet</servlet-name>
   	<url-pattern>/LoginServlet</url-pattern>
-  </servlet-mapping>
-
-  <servlet-mapping>
-  	<servlet-name>NerFilmServlet</servlet-name>
-  	<url-pattern>/NerFilmServlet</url-pattern>
   </servlet-mapping>
 
   <servlet-mapping>
@@ -57,5 +51,9 @@
   <servlet-mapping>
   	<servlet-name>FilmServlet</servlet-name>
   	<url-pattern>/FilmServlet</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+  	<servlet-name>NewFilmServlet</servlet-name>
+  	<url-pattern>/NewFilmServlet</url-pattern>
   </servlet-mapping>
 </web-app>

@@ -20,35 +20,42 @@ import freemarker.template.TemplateException;
 
 public class CreateHtml {
 
-	public void create() throws IOException, TemplateException, SQLException {
+	public void create() {
 		File file = new File("");
 		String Path = file.getAbsolutePath();
 		Configuration cfg = new Configuration();
-		cfg.setDirectoryForTemplateLoading(new File(Path + "/src/main/ftl"));
-		cfg.setDefaultEncoding("UTF-8");
-		
-		Template temp = cfg.getTemplate("templates.ftl");
-		temp.setEncoding("UTF-8");
-		
-		Map<Object, Object> map = new HashMap<Object, Object>();
-
-		List<Object> language = new ArrayList<Object>();
-		GetLanguage gl = new GetLanguage();
-		ResultSet rs = gl.getlanguage();
-		while(rs.next()){
-			language.add(rs.getString("name"));
-		}
-		map.put("language", language);
-		File file2 = new File(Path + "/src/main/webapp/newfilm.html");
-		Writer output = new OutputStreamWriter(new FileOutputStream(file2));
-
 		try {
+			cfg.setDirectoryForTemplateLoading(new File(Path + "/src/main/ftl"));
+
+			cfg.setDefaultEncoding("UTF-8");
+
+			Template temp;
+
+			temp = cfg.getTemplate("templates.ftl");
+			temp.setEncoding("UTF-8");
+			Map<Object, Object> map = new HashMap<Object, Object>();
+
+			List<Object> language = new ArrayList<Object>();
+			GetLanguage gl = new GetLanguage();
+			ResultSet rs;
+			rs = gl.getlanguage();
+			while (rs.next()) {
+				language.add(rs.getString("name"));
+			}
+			map.put("language", language);
+			File file2 = new File(Path + "/src/main/webapp/newfilm.html");
+			Writer output = new OutputStreamWriter(new FileOutputStream(file2));
 			temp.process(map, output);
-		} catch (TemplateException e) {
-			e.printStackTrace();
+			output.flush();
+			output.close();
+		} catch (IOException e1) {
+			e1.printStackTrace();
+		} catch (SQLException e3) {
+			e3.printStackTrace();
+		} catch (TemplateException e4) {
+			e4.printStackTrace();
 		}
-		output.flush();
-		output.close();
+
 	}
 
 }

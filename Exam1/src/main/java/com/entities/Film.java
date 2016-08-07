@@ -5,6 +5,15 @@ public class Film {
 	private String title;
 	private String desc;
 	private long language;
+	private String language_name;
+
+	public String getLanguage_name() {
+		return language_name;
+	}
+
+	public void setLanguage_name(String language_name) {
+		this.language_name = language_name;
+	}
 
 	public int getFilm_id() {
 		return film_id;

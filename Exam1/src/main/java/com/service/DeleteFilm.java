@@ -12,12 +12,13 @@ public class DeleteFilm {
 		Connection conn = ConnectionFactory.getInstance().makeConn();
 		FilmImpl fi = new FilmImpl();
 		try {
+			conn.setAutoCommit(false);
 			fi.delete(conn, film);
+			conn.commit();
 			conn.close();
 			return true;
 		} catch (SQLException e) {
 			try {
-				System.out.println("删除失败");
 				conn.rollback();
 			} catch (SQLException e1) {
 				e1.printStackTrace();

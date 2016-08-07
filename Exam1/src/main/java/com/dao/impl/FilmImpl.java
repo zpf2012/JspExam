@@ -17,11 +17,11 @@ public class FilmImpl implements FilmDao{
 	}
 
 	public void insert(Connection conn, Film film) throws SQLException {
-		String sql = "insert into film(title,description,language_id) values (?,?,?)";
+		String sql = "insert into film(title,description,language_id) values (?,?,(select language_id from language where name =?))";
 		PreparedStatement ps =conn.prepareStatement(sql);
 		ps.setString(1, film.getTitle());
 		ps.setString(2, film.getDesc());
-		ps.setLong(3, film.getLanguage());
+		ps.setString(3, film.getLanguage_name());
 		ps.execute();		
 	}
 
