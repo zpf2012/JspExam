@@ -39,13 +39,8 @@ public class FilmServlet extends HttpServlet {
 
 		RequestDispatcher rd = null;
 		String forword = null;
-		HttpSession session = request.getSession();
-		if(session.getAttribute("customer")  == null){
-			forword = "/login.jsp";
-		}else{
-			forword = "/film.jsp";		
-		}
-		
+
+		forword = "/login.jsp";
 		rd = request.getRequestDispatcher(forword);
 		rd.forward(request, response);
 	}

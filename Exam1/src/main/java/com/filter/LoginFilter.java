@@ -38,14 +38,16 @@ public class LoginFilter implements Filter {
 	public void doFilter(ServletRequest request, ServletResponse response, FilterChain chain) throws IOException, ServletException {
 		RequestDispatcher rd = null;
 		String forword = null;
-		HttpServletRequest request2 = (HttpServletRequest)request;
-		HttpSession session = request2.getSession();
-		if(session.getAttribute("customer")==null){
+		HttpServletRequest req = (HttpServletRequest)request;
+		HttpSession session = req.getSession();
+		if(session.getAttribute("customer")  != "customer"){
 			forword = "/login.jsp";
 			rd = request.getRequestDispatcher(forword);
 			rd.forward(request, response);
+		}else{
+			chain.doFilter(request, response);					
 		}
-		chain.doFilter(request, response);
+		
 	}
 
 	/**
