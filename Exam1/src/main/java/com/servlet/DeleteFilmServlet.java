@@ -43,9 +43,13 @@ public class DeleteFilmServlet extends HttpServlet {
 		Film film = new Film();
 		film.setFilm_id(Integer.parseInt(id));
 		DeleteFilm df = new DeleteFilm();
-		df.delete(film);
-		
-		forword = "/film.jsp";
+		if(df.delete(film)){
+			request.setAttribute("delete", "success");
+			forword = "/film.jsp";
+		}else{
+			request.setAttribute("delete", "fail");
+			forword = "/fail.jsp";
+		}		
 		rd = request.getRequestDispatcher(forword);
 		rd.forward(request, response);
 		

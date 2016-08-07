@@ -33,7 +33,7 @@
 					<td><%=rs.getString("title")%></td>
 					<td><%=rs.getString("description")%></td>
 					<td><%=rs.getString("name")%></td>
-					<td><a href="<%=request.getContextPath()%>/DeleteFilm?id=<%=rs.getLong("film_id")%>">删除</a></td>
+					<td><a href="<%=request.getContextPath()%>/DeleteFilmServlet?id=<%=rs.getLong("film_id")%>">删除</a></td>
 				</tr>
 				<%} %>
 			</table>

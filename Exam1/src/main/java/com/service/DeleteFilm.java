@@ -16,6 +16,12 @@ public class DeleteFilm {
 			conn.close();
 			return true;
 		} catch (SQLException e) {
+			try {
+				System.out.println("删除失败");
+				conn.rollback();
+			} catch (SQLException e1) {
+				e1.printStackTrace();
+			}
 			e.printStackTrace();
 		}
 		return false;
