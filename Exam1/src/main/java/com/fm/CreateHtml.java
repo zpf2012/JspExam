@@ -22,10 +22,11 @@ public class CreateHtml {
 
 	public void create() {
 		File file = new File("");
-		String Path = file.getAbsolutePath();
 		Configuration cfg = new Configuration();
 		try {
-			cfg.setDirectoryForTemplateLoading(new File(Path + "/src/main/ftl"));
+			String path = file.getCanonicalPath();
+			System.out.println(path);
+			cfg.setDirectoryForTemplateLoading(new File(path+"\\src\\main\\ftl"));
 
 			cfg.setDefaultEncoding("UTF-8");
 
@@ -43,7 +44,7 @@ public class CreateHtml {
 				language.add(rs.getString("name"));
 			}
 			map.put("language", language);
-			File file2 = new File(Path + "/src/main/webapp/newfilm.html");
+			File file2 = new File(path+"\\src\\main\\webapp\\newfilm.html");
 			Writer output = new OutputStreamWriter(new FileOutputStream(file2));
 			temp.process(map, output);
 			output.flush();

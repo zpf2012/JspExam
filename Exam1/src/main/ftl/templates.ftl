@@ -7,10 +7,10 @@
 </head>
 <body>
 <center>
-	<form action="<%=request.getContextPath()%>/NewFilmServlet" method="post">
+	<form action="/Exam1/NewFilmServlet" method="post">
 		电影名称：<input type="text" name="title" /><br>
 		<br> 电影描述：<input type="text" name="desc" /><br>
-		<br> 选择语种：<select name="language" width="20">
+		<br> 选择语种：<select name="language">
 			<#list language as language><option value="${language}">${language}</option></#list>
 		</select>		
 		<input type="submit" value="提交"/>

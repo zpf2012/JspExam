@@ -46,9 +46,12 @@ public class NewFilmServlet extends HttpServlet {
 		film.setLanguage_name(request.getParameter("language"));
 		
 		NewFilm nf = new NewFilm();
-		nf.addfilm(film);
-		
-		forword = "/film.jsp";
+		if(nf.addfilm(film)){
+			forword = "/success.jsp";
+		}else{
+			forword = "/fail.jsp";
+		}
+			
 		rd = request.getRequestDispatcher(forword);
 		rd.forward(request, response);		
 	}

@@ -10,9 +10,23 @@
   	<description></description>
   	<filter-class>com.filter.LoginFilter</filter-class>
   </filter>
+  <filter>
+  	<filter-name>EncodingFilter</filter-name>
+  	<display-name>EncodingFilter</display-name>
+  	<description></description>
+  	<filter-class>com.filter.EncodingFilter</filter-class>
+  	<init-param>
+      <param-name>encoding</param-name>
+      <param-value>UTF-8</param-value>
+    </init-param>
+  </filter>
   <filter-mapping>
   	<filter-name>LoginFilter</filter-name>
   	<url-pattern>/LoginFilter</url-pattern>
+  </filter-mapping>
+  <filter-mapping>
+  	<filter-name>EncodingFilter</filter-name>
+  	<url-pattern>/EncodingFilter</url-pattern>
   </filter-mapping>
   <servlet>
   	<servlet-name>LoginServlet</servlet-name>
@@ -20,7 +34,6 @@
   	<description></description>
   	<servlet-class>com.servlet.LoginServlet</servlet-class>
   </servlet>
-
   <servlet>
   	<servlet-name>DeleteFilmServlet</servlet-name>
   	<display-name>DeleteFilmServlet</display-name>

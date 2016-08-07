@@ -14,8 +14,8 @@ public class NewFilm {
 		try {
 			conn.setAutoCommit(false);
 			fi.insert(conn, film);
-			conn.close();
 			conn.commit();
+			conn.close();
 			return true;
 		} catch (SQLException e) {
 			try {

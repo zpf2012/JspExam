@@ -22,6 +22,7 @@ public class FilmImpl implements FilmDao{
 		ps.setString(1, film.getTitle());
 		ps.setString(2, film.getDesc());
 		ps.setString(3, film.getLanguage_name());
+		System.out.println("成功");
 		ps.execute();		
 	}
 

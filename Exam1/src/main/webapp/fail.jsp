@@ -4,12 +4,12 @@
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-<title>删除失败</title>
+<title>操作失败</title>
 </head>
 <body>
 <center>
 	<h3>
-		删除失败！！！
+		操作失败！！！
 	</h3>
 	<a href="<%=request.getContextPath()%>/film.jsp">返回电影查看页</a>
 </center>
