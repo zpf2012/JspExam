@@ -45,7 +45,7 @@ public class DeleteFilmServlet extends HttpServlet {
 		DeleteFilm df = new DeleteFilm();
 		if(df.delete(film)){
 			request.setAttribute("delete", "success");
-			forword = "/film.jsp";
+			forword = "/success.jsp";
 		}else{
 			request.setAttribute("delete", "fail");
 			forword = "/fail.jsp";

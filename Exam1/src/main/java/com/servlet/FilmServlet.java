@@ -1,16 +1,13 @@
 package com.servlet;
 
 import java.io.IOException;
-import java.sql.ResultSet;
-import java.sql.SQLException;
 
 import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
-
-import com.service.FilmInfo;
+import javax.servlet.http.HttpSession;
 
 /**
  * Servlet implementation class FilmServlet
@@ -39,10 +36,15 @@ public class FilmServlet extends HttpServlet {
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		RequestDispatcher rd = null;
 		String forword = null;
-		forword = "/film.jsp";
+		HttpSession session = request.getSession();
+		if(session.getAttribute("customer")  == null){
+			forword = "/login.jsp";
+		}else{
+			forword = "/film.jsp";		
+		}
+		
 		rd = request.getRequestDispatcher(forword);
 		rd.forward(request, response);
-		
 	}
 
 }

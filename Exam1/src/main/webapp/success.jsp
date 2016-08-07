@@ -8,7 +8,7 @@
 </head>
 <body>
 	<center>
-		<h3>登陆成功</h3>
+		<h3>操作成功</h3>
 		<a href="<%=request.getContextPath() %>/film.jsp">电影管理</a>
 	</center>
 </body>

@@ -14,6 +14,9 @@
 		}
 	}
 </script>
+<%
+	session.setAttribute("customer", "customer");
+%>
 <body>
 <center>
 	<form name="loginform" action="<%= request.getContextPath()%>/LoginServlet" method="post">
