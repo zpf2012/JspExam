@@ -39,6 +39,12 @@
   	<description></description>
   	<servlet-class>com.servlet.NewFilmServlet</servlet-class>
   </servlet>
+  <servlet>
+  	<servlet-name>UpdateServlet</servlet-name>
+  	<display-name>UpdateServlet</display-name>
+  	<description></description>
+  	<servlet-class>com.servlet.UpdateServlet</servlet-class>
+  </servlet>
   <servlet-mapping>
   	<servlet-name>LoginServlet</servlet-name>
   	<url-pattern>/LoginServlet</url-pattern>
@@ -55,5 +61,9 @@
   <servlet-mapping>
   	<servlet-name>NewFilmServlet</servlet-name>
   	<url-pattern>/NewFilmServlet</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+  	<servlet-name>UpdateServlet</servlet-name>
+  	<url-pattern>/UpdateServlet</url-pattern>
   </servlet-mapping>
 </web-app>

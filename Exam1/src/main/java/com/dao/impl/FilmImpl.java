@@ -33,4 +33,14 @@ public class FilmImpl implements FilmDao{
 		ps.execute();		
 	}
 
+	public ResultSet update(Connection conn, Film film) throws SQLException {
+		String sql = "update film set title=?,description=?,language_id=?";
+		PreparedStatement ps = conn.prepareStatement(sql);
+		ps.setString(1, film.getTitle());
+		ps.setString(2, film.getDesc());
+		ps.setInt(3, film.getFilm_id());
+		ps.execute();
+		return null;
+	}
+
 }

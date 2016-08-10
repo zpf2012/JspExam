@@ -1,8 +1,6 @@
 <%@page import="com.fm.CreateHtml"%>
 <%@page import="com.service.FilmInfo"%>
 <%@page import="java.util.Iterator"%>
-<%@page import="com.service.GetLanguage"%>
-<%@page import="com.dao.impl.LanguageImpl"%>
 <%@page import="java.sql.ResultSet"%>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
@@ -18,7 +16,7 @@
 <body>
 	<center>
 	<h3>电影管理</h3><br>
-	<a href="<%=request.getContextPath()%>/newfilm.html">新增电影</a>
+	<a href="<%=request.getContextPath()%>/newfilm.jsp">新增电影</a>
 		<form method="post">
 			<table border="1">
 				<tr>
@@ -26,7 +24,8 @@
 					<th width="15%">Title</th>
 					<th width="55%">DESC</th>
 					<th width="10">Language</th>
-					<th width="15">Buy</th>
+					<th width="15">Delete</th>
+					<th width="15">Update</th>
 				</tr>
 				<%while(rs.next()){ %>
 				<tr>
@@ -35,6 +34,7 @@
 					<td><%=rs.getString("description")%></td>
 					<td><%=rs.getString("name")%></td>
 					<td><a href="<%=request.getContextPath()%>/DeleteFilmServlet?id=<%=rs.getLong("film_id")%>">删除</a></td>
+					<td><a href="<%=request.getContextPath()%>/UpdateServlet?id=<%=rs.getLong("film_id")%>">编辑</a></td>
 				</tr>
 				<%} %>
 			</table>
