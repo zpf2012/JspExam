@@ -13,7 +13,7 @@
 <body>
 
 	<div align="center">
-		<form action="/Exam1/NewFilmServlet" method="post">
+		<form action="/NewFilmServlet" method="post">
 			电影名称：<input type="text" name="title" /><br> <br> 电影描述：<input
 				type="text" name="desc" /><br> <br> 选择语种：<select
 				name="language">

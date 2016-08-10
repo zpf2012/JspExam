@@ -18,7 +18,7 @@
 <body>
 	<center>
 		<form name="loginform"
-			action="<%=request.getContextPath()%>/LoginServlet" method="post">
+			action="/LoginServlet" method="post">
 			user:<input type="text" name="customer" />
 			<%
 				session.setAttribute("customer", "customer");

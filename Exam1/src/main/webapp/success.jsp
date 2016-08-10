@@ -9,7 +9,7 @@
 <body>
 	<center>
 		<h3>操作成功</h3>
-		<a href="<%=request.getContextPath() %>/film.jsp">电影管理</a>
+		<a href="/film.jsp">电影管理</a>
 	</center>
 </body>
 </html>

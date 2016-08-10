@@ -16,7 +16,7 @@
 <body>
 	<center>
 	<h3>电影管理</h3><br>
-	<a href="<%=request.getContextPath()%>/newfilm.jsp">新增电影</a>
+	<a href="/newfilm.jsp">新增电影</a>
 		<form method="post">
 			<table border="1">
 				<tr>
@@ -33,8 +33,8 @@
 					<td><%=rs.getString("title")%></td>
 					<td><%=rs.getString("description")%></td>
 					<td><%=rs.getString("name")%></td>
-					<td><a href="<%=request.getContextPath()%>/DeleteFilmServlet?id=<%=rs.getLong("film_id")%>">删除</a></td>
-					<td><a href="<%=request.getContextPath()%>/UpdateServlet?id=<%=rs.getLong("film_id")%>">编辑</a></td>
+					<td><a href="/DeleteFilmServlet?id=<%=rs.getLong("film_id")%>">删除</a></td>
+					<td><a href="/UpdateServlet?id=<%=rs.getLong("film_id")%>">编辑</a></td>
 				</tr>
 				<%} %>
 			</table>

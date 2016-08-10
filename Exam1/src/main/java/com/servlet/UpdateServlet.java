@@ -68,7 +68,7 @@ public class UpdateServlet extends HttpServlet {
 			e.printStackTrace();
 		}
 		
-		response.sendRedirect("/Exam1/Update.html");
+		response.sendRedirect("/Update.html");
 		
 	}
 
